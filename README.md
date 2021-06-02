@@ -12,3 +12,5 @@ To run code use:
 
 
   `python3 driver_decode.py <sensor#>`
+  
+If you add drivers simply copy and paste the `PX4-Autopilot/src/drivers/drv_sensor.h` file into `sensors.txt`. Any additional drivers that you add should be in the format `#define DRV_<devType>_DEVTYPE_<devName> 0x<device_address>`
