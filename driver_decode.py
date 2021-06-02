@@ -30,14 +30,22 @@ def findDriver(number,driver_dict):
     int_sens_lst=[int(x,2) for x in bin_sens_lst]
 
     d_key=str(hex(int_sens_lst[0]))
-
+    print( "=============================================")
     print(f"Device name:  {driver_dict[d_key][0]} ")
     print(f"Device type:  {driver_dict[d_key][1]} ")
     print(f"Device bus :  {int_sens_lst[2]}       ") 
-    print(f"Interface  :  {bus_interface[int_sens_lst[3]]}") 
+    print(f"Interface  :  {bus_interface[int_sens_lst[3]]}")
+    print(" ")
 
 
 driver_dict=make_driver_dict("sensors.txt")
-findDriver(int(sys.argv[1]), driver_dict)
+
+if (len(sys.argv)==1):
+    print("add sensor argument")
+    findDriver(int(sys.argv[1]), driver_dict)
+else:
+    for sensor_num in sys.argv[1:]:
+        findDriver(int(sensor_num), driver_dict)
+
 
 
