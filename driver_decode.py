@@ -42,7 +42,7 @@ driver_dict=make_driver_dict("sensors.txt")
 
 if (len(sys.argv)==1):
     print("add sensor argument")
-    findDriver(int(sys.argv[1]), driver_dict)
+    
 else:
     for sensor_num in sys.argv[1:]:
         findDriver(int(sensor_num), driver_dict)
