@@ -41,7 +41,7 @@ def findDriver(number,driver_dict):
 driver_dict=make_driver_dict("sensors.txt")
 
 if (len(sys.argv)==1):
-    print("add sensor argument")
+    print("[ERROR] add sensor argument")
     
 else:
     for sensor_num in sys.argv[1:]:
