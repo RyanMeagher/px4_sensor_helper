@@ -30,6 +30,12 @@ def findDriver(number,driver_dict):
     int_sens_lst=[int(x,2) for x in bin_sens_lst]
 
     d_key=str(hex(int_sens_lst[0]))
+
+    # check to see if 0x0? was truncated to 0x?
+    if(len(d_key)==3):
+        d_key=d_key[:2]+"0"+d_key[2]
+
+
     print( "=============================================")
     print(f"Device name:  {driver_dict[d_key][0]} ")
     print(f"Device type:  {driver_dict[d_key][1]} ")
